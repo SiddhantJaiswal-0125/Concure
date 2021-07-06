@@ -9,7 +9,6 @@ import 'dart:convert';
 
 import 'package:intl/intl.dart';
 
-
 class Networking {
   final box = GetStorage();
 
@@ -18,7 +17,6 @@ class Networking {
     var url = 'https://doh.saal.ai/api/live';
 
     var response = await http.get(url);
-
 
     if (response.statusCode == 200) {
       dynamic data = jsonDecode(response.body);
@@ -31,8 +29,8 @@ class Networking {
   }
 
   get_notified() async {
-    var url1 = Uri.parse(
-        'https://cdn-api.co-vin.in/api/v2/admin/location/states');
+    var url1 =
+        Uri.parse('https://cdn-api.co-vin.in/api/v2/admin/location/states');
     var response1 = await http.get(url1);
     // print("res ${response.body}");
     if (response1.statusCode == 200) {
@@ -47,8 +45,7 @@ class Networking {
       throw Exception('Unexpected error occured!');
     }
     var url2 = Uri.parse(
-        'https://cdn-api.co-vin.in/api/v2/admin/location/districts/${box.read(
-            'state_id')}');
+        'https://cdn-api.co-vin.in/api/v2/admin/location/districts/${box.read('state_id')}');
     var response2 = await http.get(url2);
     print(response2.body);
     final distictsList = distictsListFromJson(response2.body);
@@ -61,6 +58,4 @@ class Networking {
       }
     }
   }
-
-
 }

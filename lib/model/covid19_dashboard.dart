@@ -20,24 +20,34 @@ abstract class Covid19Dashboard
 
   @BuiltValueField(wireName: 'date')
   String get date;
+
   @BuiltValueField(wireName: 'countries')
   BuiltList<Countries> get countries;
+
   @BuiltValueField(wireName: 'confirmed')
   int get confirmed;
+
   @BuiltValueField(wireName: 'deaths')
   int get deaths;
+
   @BuiltValueField(wireName: 'recovered')
   int get recovered;
+
   @BuiltValueField(wireName: 'active')
   int get active;
+
   @BuiltValueField(wireName: 'deltaConfirmed')
   int get deltaConfirmed;
+
   @BuiltValueField(wireName: 'deltaDeaths')
   int get deltaDeaths;
+
   @BuiltValueField(wireName: 'deltaRecovered')
   int get deltaRecovered;
+
   @BuiltValueField(wireName: 'deltaActive')
   int get deltaActive;
+
   String toJson() {
     return json
         .encode(serializers.serializeWith(Covid19Dashboard.serializer, this));

@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 
 class DetailsPage extends StatefulWidget {
   String title, author, urlToImage, publishedAt, description;
+
   DetailsPage(
       {this.title,
-        this.author,
-        this.description,
-        this.publishedAt,
-        this.urlToImage});
+      this.author,
+      this.description,
+      this.publishedAt,
+      this.urlToImage});
 
   @override
   _DetailsPageState createState() => _DetailsPageState();
@@ -17,7 +18,7 @@ class _DetailsPageState extends State<DetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  AppBar(
+      appBar: AppBar(
         centerTitle: true,
         title: Text('Covid News'),
       ),
@@ -51,14 +52,12 @@ class _DetailsPageState extends State<DetailsPage> {
                           ),
                         ),
                       ),
-
                       Text(
                         widget.publishedAt.substring(0, 10),
                         style: TextStyle(
-                          fontSize: 15.0,
-                          color: Colors.redAccent,
-                          fontWeight:  FontWeight.w500
-                        ),
+                            fontSize: 15.0,
+                            color: Colors.redAccent,
+                            fontWeight: FontWeight.w500),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(10.0),

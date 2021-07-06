@@ -16,30 +16,43 @@ abstract class Countries implements Built<Countries, CountriesBuilder> {
 
   @BuiltValueField(wireName: 'country')
   String get country;
+
   @BuiltValueField(wireName: 'countryCode')
   String get countryCode;
+
   @BuiltValueField(wireName: 'latitude')
   double get latitude;
+
   @BuiltValueField(wireName: 'longitude')
   double get longitude;
+
   @BuiltValueField(wireName: 'confirmed')
   int get confirmed;
+
   @BuiltValueField(wireName: 'deaths')
   int get deaths;
+
   @BuiltValueField(wireName: 'recovered')
   int get recovered;
+
   @BuiltValueField(wireName: 'active')
   int get active;
+
   @BuiltValueField(wireName: 'updatedAt')
   String get updatedAt;
+
   @BuiltValueField(wireName: 'deltaConfirmed')
   int get deltaConfirmed;
+
   @BuiltValueField(wireName: 'deltaDeaths')
   int get deltaDeaths;
+
   @BuiltValueField(wireName: 'deltaRecovered')
   int get deltaRecovered;
+
   @BuiltValueField(wireName: 'deltaActive')
   int get deltaActive;
+
   String toJson() {
     return json.encode(serializers.serializeWith(Countries.serializer, this));
   }

@@ -66,6 +66,7 @@ class _Indian extends State<Indian> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Concure'),
+        centerTitle: true,
       ),
 
       body: data == null
@@ -134,36 +135,36 @@ class _Indian extends State<Indian> {
                                           aspectRatio: 1,
                                           child: PieChart(
                                             PieChartData(
-                                                pieTouchData: PieTouchData(
-                                                    touchCallback:
-                                                        (pieTouchResponse) {
-                                                  setState(() {
-                                                    final desiredTouch =
-                                                        pieTouchResponse
-                                                                    .touchInput
-                                                                is! PointerExitEvent &&
-                                                            pieTouchResponse
-                                                                    .touchInput
-                                                                is! PointerUpEvent;
-                                                    if (desiredTouch &&
-                                                        pieTouchResponse
-                                                                .touchedSection !=
-                                                            null) {
-                                                      touchedIndex =
+                                              pieTouchData: PieTouchData(
+                                                  touchCallback:
+                                                      (pieTouchResponse) {
+                                                setState(() {
+                                                  final desiredTouch =
+                                                      pieTouchResponse
+                                                                  .touchInput
+                                                              is! PointerExitEvent &&
                                                           pieTouchResponse
-                                                              .touchedSection
-                                                              .touchedSectionIndex;
-                                                    } else {
-                                                      touchedIndex = -1;
-                                                    }
-                                                  });
-                                                }),
-                                                borderData: FlBorderData(
-                                                  show: false,
-                                                ),
-                                                sectionsSpace: 0,
-                                                centerSpaceRadius: 40,
-                                                sections: showingSections(),
+                                                                  .touchInput
+                                                              is! PointerUpEvent;
+                                                  if (desiredTouch &&
+                                                      pieTouchResponse
+                                                              .touchedSection !=
+                                                          null) {
+                                                    touchedIndex =
+                                                        pieTouchResponse
+                                                            .touchedSection
+                                                            .touchedSectionIndex;
+                                                  } else {
+                                                    touchedIndex = -1;
+                                                  }
+                                                });
+                                              }),
+                                              borderData: FlBorderData(
+                                                show: false,
+                                              ),
+                                              sectionsSpace: 0,
+                                              centerSpaceRadius: 40,
+                                              sections: showingSections(),
                                             ),
                                           ),
                                         ),
@@ -171,17 +172,17 @@ class _Indian extends State<Indian> {
                                       Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                        MainAxisAlignment.start,
+                                            MainAxisAlignment.start,
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                            CrossAxisAlignment.start,
                                         children: <Widget>[
                                           Row(
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                                MainAxisAlignment.spaceBetween,
                                             children: [
                                               Container(
                                                 margin:
-                                                EdgeInsets.only(right: 4),
+                                                    EdgeInsets.only(right: 4),
                                                 color: Colors.red,
                                                 width: 10,
                                                 height: 10,
@@ -191,11 +192,11 @@ class _Indian extends State<Indian> {
                                           ),
                                           Row(
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                                MainAxisAlignment.spaceBetween,
                                             children: [
                                               Container(
                                                 margin:
-                                                EdgeInsets.only(right: 4),
+                                                    EdgeInsets.only(right: 4),
                                                 color: Colors.blue,
                                                 width: 10,
                                                 height: 10,
@@ -205,11 +206,11 @@ class _Indian extends State<Indian> {
                                           ),
                                           Row(
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                                MainAxisAlignment.spaceBetween,
                                             children: [
                                               Container(
                                                 margin:
-                                                EdgeInsets.only(right: 4),
+                                                    EdgeInsets.only(right: 4),
                                                 color: Colors.green,
                                                 width: 10,
                                                 height: 10,
@@ -379,27 +380,19 @@ class _Indian extends State<Indian> {
 }
 
 Widget Pan({String tr, String nr, String td, String nd, String ti, String ni}) {
-  int tri , nri, tdi, ndi, tii,nii;
+  int tri, nri, tdi, ndi, tii, nii;
   tri = int.parse(tr);
   nri = int.parse(nr);
   tdi = int.parse(td);
   ndi = int.parse(nd);
   tii = int.parse(ti);
-  nii =  int.parse(ni);
-  if(tri < 0)
-    tri = -1 * tri;
-  if(nri < 0 )
-    nri = -1 * nri;
-  if(tdi < 0)
-    tdi = -1 * tdi;
-  if(ndi < 0)
-    ndi = -1 * ndi ;
-  if(tii < 0)
-    tii = -1 * tii;
-  if(nii < 0)
-    nii = -1 * nii;
-
-
+  nii = int.parse(ni);
+  if (tri < 0) tri = -1 * tri;
+  if (nri < 0) nri = -1 * nri;
+  if (tdi < 0) tdi = -1 * tdi;
+  if (ndi < 0) ndi = -1 * ndi;
+  if (tii < 0) tii = -1 * tii;
+  if (nii < 0) nii = -1 * nii;
 
   return Container(
     // height: 0,

@@ -1,12 +1,7 @@
-
-
 import 'dart:async';
-
 import 'package:covid19_tracker/model/constants.dart';
 import 'package:covid19_tracker/model/config.dart';
-import 'package:covid19_tracker/screens/demo.dart';
 import 'package:covid19_tracker/screens/slot.dart';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -15,7 +10,6 @@ import 'package:http/http.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import 'package:covid19_tracker/main.dart';
 import 'Countries.dart';
 import 'Indian.dart';
@@ -29,20 +23,18 @@ class SettingPage extends StatefulWidget {
 }
 
 class _SettingPage extends State<SettingPage> {
-
-  var isSwitched = false;
-
+  bool isSwitched = true;
 
   Future<bool> Savesettings(bool swit) async {
-    // TODO: implement initState
+
 
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setBool('isSwitched', isSwitched);
 
     return prefs.commit();
   }
-
-  Future<bool> Getsettings() async {
+  //
+  Future<bool> Getsettiegs() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     isSwitched = prefs.getBool('isSwitched');
     return isSwitched;
@@ -50,152 +42,141 @@ class _SettingPage extends State<SettingPage> {
 
   @override
   void initState() {
-    Provider.of<NotificationService>(context, listen: false).initialize();
     // TODO: implement initState
     super.initState();
-
   }
 
   FutureOr update(bool value) {
+    if (value == null) {
+      isSwitched = true;
+    } else {
+      isSwitched = value;
+    }
     setState(() {
-      if (value == null) {
-        isSwitched = true;
-      } else {
-        isSwitched = value;
-      }
+
     });
   }
 
-
-
-
-
-
   @override
   Widget build(BuildContext context) {
-    // Icon blub = IconDa(Icons.lightbulb, size: 35,);
     IconData blub2 = Icons.lightbulb;
     IconData blub = Icons.highlight;
 
     return Scaffold(
       appBar: AppBar(
         title: Text('Concure'),
+        centerTitle:  true,
       ),
       body: SingleChildScrollView(
-        child: Consumer<NotificationService>(
-          builder: (context, model, _) =>
-          (
-          Container(
-              child: Column(
-                // mainAxisAlignment: MainAxisAlignment.values[5],
+          child: Container(
+        child: Column(
+
+          children: [
+            Card(
+              elevation: 3,
+              child: Row(
+
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-
-                Card(
-                elevation: 3,
-                child: Row(
-                  // crossAxisAlignment: CrossAxisAlignment.stretch,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      "Set Dark Mode",
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(20),
-                      child: GestureDetector(
-                        child: Icon(
-                          isSwitched ? blub : blub2,
-                          size: 35,
-                        ),
-                        onTap: () {
-                          if (isSwitched == false) {
-                            isSwitched = true;
-                            // print("HERE make ");
-                            constant().setcolor(Colors.black, Color(0xff202c3b));
-                            constant.navbar = Colors.white;
-                            setState(() {
-
-                            });
-
-                          } else {
-                            isSwitched = false;
-
-                            constant.navbar = Color(0xff202c3b);
-                            constant().setcolor(Colors.white, Colors.cyan);
-                            setState(() {
-
-                            });
-                          }
-                          currentTheme.switchTheme();
-                          Savesettings(isSwitched);
-                        },
+                  Text(
+                    "Set Dark Mode",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  SizedBox(
+                    width: 30,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(20),
+                    child: GestureDetector(
+                      child: Icon(
+                        isSwitched ? blub : blub2,
+                        size: 35,
                       ),
-                    ),
-                  ],
-                ),
-              ),
+                      onTap: () {
+                        print("switch : "+isSwitched.toString());
+                        if (isSwitched == false) {
 
-          SizedBox(
-          height: 50,
-          ),
-          clickbutton(
-            'Graphical Data',
-                () {
+                          isSwitched = true;
+                          constant.navbar = Colors.white;
+                          constant.downbar = Color(0xff202c3b);
+
+
+                          setState(() {});
+                        } else {
+                          isSwitched = false;
+
+                          constant.navbar = Color(0xff202c3b);
+                          constant.downbar = Colors.cyan;
+
+
+                          // constant().setcolor(Colors.white, Colors.cyan);
+                          setState(() {});
+                        }
+                        currentTheme.switchTheme();
+                        Savesettings(isSwitched);
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            clickbutton(
+              'Graphical Data',
+              () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => GraphsLine()),
+                );
+              },
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            clickbutton('Covid News', () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => GraphsLine()),
+                MaterialPageRoute(
+                  builder: (context) => HomePage(),
+                ),
               );
-            },
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          clickbutton('Covid News', () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => HomePage(),
-              ),
-            );
-          }),
-                  SizedBox(height: 10,),
-                  clickbutton('Vaccinator', () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => VaccinebyPin()),
-                    );
-                  }),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  clickbutton('Donate', () {
-                    launch('https://covid19responsefund.org/en/');
-                  }),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  clickbutton(
-                    'Myth Busters',
-                        () {
-                      launch(
-                          'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters');
-                    },
-                  ),
-          SizedBox(height: 50,),
-
-              SizedBox(
-                height: 10,
-              ),
-
-              ],
+            }),
+            SizedBox(
+              height: 10,
             ),
-          )
+            clickbutton('Vaccinator', () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => VaccinebyPin()),
+              );
+            }),
+            SizedBox(
+              height: 10,
+            ),
+            clickbutton('Donate', () {
+              launch('https://covid19responsefund.org/en/');
+            }),
+            SizedBox(
+              height: 10,
+            ),
+            clickbutton(
+              'Myth Busters',
+              () {
+                launch(
+                    'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters');
+              },
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+          ],
         ),
-      ),
-      ),
+      )),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           color: constant.navbar,

@@ -41,6 +41,7 @@ class _DashboardScreenState extends State<DashboardScreen>
   bool isPlaying = false;
 
   List<dynamic> dataList;
+
   @override
   void initState() {
     super.initState();
@@ -98,9 +99,9 @@ class _DashboardScreenState extends State<DashboardScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
         title: Text('Concure'),
 
+        centerTitle: true,
       ),
       body: data == null
           ? Center(child: CircularProgressIndicator())
@@ -116,7 +117,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                     delegate: SliverChildListDelegate([
                       buildSummerCard(
                           text: 'Confirmed',
-                          color: constant().getcolor(),
+                          color: constant.downbar,
                           count: data.confirmed),
                       buildSummerCard(
                           text: 'Active',

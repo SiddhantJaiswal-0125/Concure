@@ -2,7 +2,6 @@
 
 part of covid19_dashboard;
 
-
 Serializer<Covid19Dashboard> _$covid19DashboardSerializer =
     new _$Covid19DashboardSerializer();
 
@@ -249,47 +248,67 @@ class Covid19DashboardBuilder
   _$Covid19Dashboard _$v;
 
   String _date;
+
   String get date => _$this._date;
+
   set date(String date) => _$this._date = date;
 
   ListBuilder<Countries> _countries;
+
   ListBuilder<Countries> get countries =>
       _$this._countries ??= new ListBuilder<Countries>();
+
   set countries(ListBuilder<Countries> countries) =>
       _$this._countries = countries;
 
   int _confirmed;
+
   int get confirmed => _$this._confirmed;
+
   set confirmed(int confirmed) => _$this._confirmed = confirmed;
 
   int _deaths;
+
   int get deaths => _$this._deaths;
+
   set deaths(int deaths) => _$this._deaths = deaths;
 
   int _recovered;
+
   int get recovered => _$this._recovered;
+
   set recovered(int recovered) => _$this._recovered = recovered;
 
   int _active;
+
   int get active => _$this._active;
+
   set active(int active) => _$this._active = active;
 
   int _deltaConfirmed;
+
   int get deltaConfirmed => _$this._deltaConfirmed;
+
   set deltaConfirmed(int deltaConfirmed) =>
       _$this._deltaConfirmed = deltaConfirmed;
 
   int _deltaDeaths;
+
   int get deltaDeaths => _$this._deltaDeaths;
+
   set deltaDeaths(int deltaDeaths) => _$this._deltaDeaths = deltaDeaths;
 
   int _deltaRecovered;
+
   int get deltaRecovered => _$this._deltaRecovered;
+
   set deltaRecovered(int deltaRecovered) =>
       _$this._deltaRecovered = deltaRecovered;
 
   int _deltaActive;
+
   int get deltaActive => _$this._deltaActive;
+
   set deltaActive(int deltaActive) => _$this._deltaActive = deltaActive;
 
   Covid19DashboardBuilder();

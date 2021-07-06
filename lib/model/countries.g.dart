@@ -295,57 +295,83 @@ class CountriesBuilder implements Builder<Countries, CountriesBuilder> {
   _$Countries _$v;
 
   String _country;
+
   String get country => _$this._country;
+
   set country(String country) => _$this._country = country;
 
   String _countryCode;
+
   String get countryCode => _$this._countryCode;
+
   set countryCode(String countryCode) => _$this._countryCode = countryCode;
 
   double _latitude;
+
   double get latitude => _$this._latitude;
+
   set latitude(double latitude) => _$this._latitude = latitude;
 
   double _longitude;
+
   double get longitude => _$this._longitude;
+
   set longitude(double longitude) => _$this._longitude = longitude;
 
   int _confirmed;
+
   int get confirmed => _$this._confirmed;
+
   set confirmed(int confirmed) => _$this._confirmed = confirmed;
 
   int _deaths;
+
   int get deaths => _$this._deaths;
+
   set deaths(int deaths) => _$this._deaths = deaths;
 
   int _recovered;
+
   int get recovered => _$this._recovered;
+
   set recovered(int recovered) => _$this._recovered = recovered;
 
   int _active;
+
   int get active => _$this._active;
+
   set active(int active) => _$this._active = active;
 
   String _updatedAt;
+
   String get updatedAt => _$this._updatedAt;
+
   set updatedAt(String updatedAt) => _$this._updatedAt = updatedAt;
 
   int _deltaConfirmed;
+
   int get deltaConfirmed => _$this._deltaConfirmed;
+
   set deltaConfirmed(int deltaConfirmed) =>
       _$this._deltaConfirmed = deltaConfirmed;
 
   int _deltaDeaths;
+
   int get deltaDeaths => _$this._deltaDeaths;
+
   set deltaDeaths(int deltaDeaths) => _$this._deltaDeaths = deltaDeaths;
 
   int _deltaRecovered;
+
   int get deltaRecovered => _$this._deltaRecovered;
+
   set deltaRecovered(int deltaRecovered) =>
       _$this._deltaRecovered = deltaRecovered;
 
   int _deltaActive;
+
   int get deltaActive => _$this._deltaActive;
+
   set deltaActive(int deltaActive) => _$this._deltaActive = deltaActive;
 
   CountriesBuilder();

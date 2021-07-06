@@ -25,20 +25,18 @@ class Cont extends StatefulWidget {
 }
 
 class _Cont extends State<Cont> with SingleTickerProviderStateMixin {
-  var url =
-      "https://doh.saal.ai/api/live";
+  var url = "https://doh.saal.ai/api/live";
   List data;
   int touchedIndex = -1;
-var sumall;
-var per_active;
-var per_rec;
-var country_code;
-var per_confirmed;
+  var sumall;
+  var per_active;
+  var per_rec;
+  var country_code;
+  var per_confirmed;
 
   @override
   void initState() {
     super.initState();
-
 
     this.getData();
     //_controller.forward();
@@ -59,177 +57,184 @@ var per_confirmed;
     return Scaffold(
       appBar: AppBar(
         title: Text('Concure'),
+        centerTitle:  true,
       ),
       body: data == null
           ? Center(child: CircularProgressIndicator())
           : RefreshIndicator(
-        onRefresh: getData,
-        child: ListView.builder(
-            itemCount: data.length,
-            itemBuilder: (BuildContext context, int index) {
-            var country=data[index]['country'].toString();
-            var confirmed=data[index]['confirmed'].toString();
-            var active=data[index]['active'].toString();
-            var recovered=data[index]['recovered'].toString();
-            var deaths=data[index]['deaths'].toString();
-            country_code=data[index]['countryCode'];
-             sumall=data[index]['confirmed']+data[index]['recovered']+data[index]['active'];
-             per_active=(data[index]['active']/sumall)*100;
-             per_rec=(data[index]['recovered']/sumall)*100;
+              onRefresh: getData,
+              child: ListView.builder(
+                  itemCount: data.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    var country = data[index]['country'].toString();
+                    var confirmed = data[index]['confirmed'].toString();
+                    var active = data[index]['active'].toString();
+                    var recovered = data[index]['recovered'].toString();
+                    var deaths = data[index]['deaths'].toString();
+                    country_code = data[index]['countryCode'];
+                    sumall = data[index]['confirmed'] +
+                        data[index]['recovered'] +
+                        data[index]['active'];
+                    per_active = (data[index]['active'] / sumall) * 100;
+                    per_rec = (data[index]['recovered'] / sumall) * 100;
 
-             per_confirmed=(data[index]['confirmed']/sumall)*100;
-            return new Container(
-                child: new Center(
-                child: new Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                new Container(
-
-                child: ExpansionTile(
-                leading:country_code.length==2?CountryPickerUtils.getDefaultFlagImage(Country(isoCode: country_code)):Text(''),
-                  title: Text(
-                  country,
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
-              ),
-                  children:<Widget> [
-                    ListTile(
-                      title: Text(
-                        'Active Cases:  ' +
-                           active,
-                        style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.deepOrangeAccent),
-                      ),
-                    ),
-                    ListTile(
-                      title: Text(
-                        'Confirmed Cases:  ' +
-                           confirmed,
-                        style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.blue),
-                      ),
-                    ),
-                    ListTile(
-                      title: Text(
-                        'Recovered Cases:  ' +
-                            recovered,
-                        style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.green),
-                      ),
-                    ),
-                    ListTile(
-                      title: Text(
-                        'Deaths:  ' +
-                            deaths,
-                        style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.red),
-                      ),
-                    ),
-                    Container(
-
-                      child: Row(
-                        children: <Widget>[
-                          const SizedBox(
-                            height: 18,
-                          ),
-                          Expanded(
-                            child: AspectRatio(
-                              aspectRatio: 1,
-                              child: PieChart(
-                                PieChartData(
-                                    pieTouchData: PieTouchData(touchCallback: (pieTouchResponse) {
-                                      setState(() {
-                                        final desiredTouch = pieTouchResponse.touchInput is! PointerExitEvent &&
-                                            pieTouchResponse.touchInput is! PointerUpEvent;
-                                        if (desiredTouch && pieTouchResponse.touchedSection != null) {
-                                          touchedIndex = pieTouchResponse.touchedSection.touchedSectionIndex;
-                                        } else {
-                                          touchedIndex = -1;
-                                        }
-                                      });
-                                    }),
-                                    borderData: FlBorderData(
-                                      show: false,
-                                    ),
-                                    sectionsSpace: 0,
-                                    centerSpaceRadius: 40,
-                                    sections: showingSections()),
-                              ),
+                    per_confirmed = (data[index]['confirmed'] / sumall) * 100;
+                    return new Container(
+                        child: new Center(
+                            child: new Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: <Widget>[
+                          new Container(
+                              child: ExpansionTile(
+                            leading: country_code.length == 2
+                                ? CountryPickerUtils.getDefaultFlagImage(
+                                    Country(isoCode: country_code))
+                                : Text(''),
+                            title: Text(
+                              country,
+                              style: TextStyle(
+                                  fontSize: 16.0, fontWeight: FontWeight.w500),
                             ),
-                          ),
-                          Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children:  <Widget>[
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.only(right: 4),
-                                    color: Colors.blue,
-                                    width: 10,
-                                    height: 10,
-
-                                  ),
-                                  Text("Confirmed cases"),
-
-                                ],),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.only(right: 4),
-                                    color: Colors.red,
-                                    width: 10,
-                                    height: 10,
-
-                                  ),
-                                  Text("Active Cases"),
-                                ],),
-
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.only(right: 4),
-                                    color: Colors.green,
-                                    width: 10,
-                                    height: 10,
-
-                                  ),
-                                  Text("Recovered Cases"),
-
-                                ],),
-
-
-
-
+                            children: <Widget>[
+                              ListTile(
+                                title: Text(
+                                  'Active Cases:  ' + active,
+                                  style: TextStyle(
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.deepOrangeAccent),
+                                ),
+                              ),
+                              ListTile(
+                                title: Text(
+                                  'Confirmed Cases:  ' + confirmed,
+                                  style: TextStyle(
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.blue),
+                                ),
+                              ),
+                              ListTile(
+                                title: Text(
+                                  'Recovered Cases:  ' + recovered,
+                                  style: TextStyle(
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.green),
+                                ),
+                              ),
+                              ListTile(
+                                title: Text(
+                                  'Deaths:  ' + deaths,
+                                  style: TextStyle(
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.red),
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: <Widget>[
+                                    const SizedBox(
+                                      height: 18,
+                                    ),
+                                    Expanded(
+                                      child: AspectRatio(
+                                        aspectRatio: 1,
+                                        child: PieChart(
+                                          PieChartData(
+                                              pieTouchData: PieTouchData(
+                                                  touchCallback:
+                                                      (pieTouchResponse) {
+                                                setState(() {
+                                                  final desiredTouch =
+                                                      pieTouchResponse
+                                                                  .touchInput
+                                                              is! PointerExitEvent &&
+                                                          pieTouchResponse
+                                                                  .touchInput
+                                                              is! PointerUpEvent;
+                                                  if (desiredTouch &&
+                                                      pieTouchResponse
+                                                              .touchedSection !=
+                                                          null) {
+                                                    touchedIndex =
+                                                        pieTouchResponse
+                                                            .touchedSection
+                                                            .touchedSectionIndex;
+                                                  } else {
+                                                    touchedIndex = -1;
+                                                  }
+                                                });
+                                              }),
+                                              borderData: FlBorderData(
+                                                show: false,
+                                              ),
+                                              sectionsSpace: 0,
+                                              centerSpaceRadius: 40,
+                                              sections: showingSections()),
+                                        ),
+                                      ),
+                                    ),
+                                    Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Container(
+                                              margin: EdgeInsets.only(right: 4),
+                                              color: Colors.blue,
+                                              width: 10,
+                                              height: 10,
+                                            ),
+                                            Text("Confirmed cases"),
+                                          ],
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Container(
+                                              margin: EdgeInsets.only(right: 4),
+                                              color: Colors.red,
+                                              width: 10,
+                                              height: 10,
+                                            ),
+                                            Text("Active Cases"),
+                                          ],
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Container(
+                                              margin: EdgeInsets.only(right: 4),
+                                              color: Colors.green,
+                                              width: 10,
+                                              height: 10,
+                                            ),
+                                            Text("Recovered Cases"),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      width: 28,
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ],
-                          ),
-                          const SizedBox(
-                            width: 28,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-
-                )
-            )
-              ])
-              )
-            );
-               }
+                          ))
+                        ])));
+                  }),
             ),
-      ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           color: constant.navbar,
@@ -314,7 +319,6 @@ var per_confirmed;
     );
   }
 
-
   List<PieChartSectionData> showingSections() {
     return List.generate(3, (i) {
       final isTouched = i == touchedIndex;
@@ -361,6 +365,4 @@ var per_confirmed;
       }
     });
   }
-
 }
-

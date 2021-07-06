@@ -18,14 +18,14 @@ class StateList {
   int ttl;
 
   factory StateList.fromJson(Map<String, dynamic> json) => StateList(
-    states: List<State>.from(json["states"].map((x) => State.fromJson(x))),
-    ttl: json["ttl"],
-  );
+        states: List<State>.from(json["states"].map((x) => State.fromJson(x))),
+        ttl: json["ttl"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "states": List<dynamic>.from(states.map((x) => x.toJson())),
-    "ttl": ttl,
-  };
+        "states": List<dynamic>.from(states.map((x) => x.toJson())),
+        "ttl": ttl,
+      };
 }
 
 class State {
@@ -40,14 +40,14 @@ class State {
   String stateNameL;
 
   factory State.fromJson(Map<String, dynamic> json) => State(
-    stateId: json["state_id"],
-    stateName: json["state_name"],
-    stateNameL: json["state_name_l"],
-  );
+        stateId: json["state_id"],
+        stateName: json["state_name"],
+        stateNameL: json["state_name_l"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "state_id": stateId,
-    "state_name": stateName,
-    "state_name_l": stateNameL,
-  };
+        "state_id": stateId,
+        "state_name": stateName,
+        "state_name_l": stateNameL,
+      };
 }

@@ -39,6 +39,7 @@ class _GraphsLineState extends State<GraphsLine> {
   bool isShowingMainData;
   st.Stack<FlSpot> stgreen;
   st.Stack<FlSpot> stred;
+
   int getdate(String s) {
     int first = int.parse(s[8]);
     int second = int.parse(s[9]);
@@ -185,6 +186,7 @@ class _GraphsLineState extends State<GraphsLine> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Concure'),
+        centerTitle: true,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -212,36 +214,35 @@ class _GraphsLineState extends State<GraphsLine> {
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
-
             children: <Widget>[
               Row(
-                mainAxisAlignment:
-                MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    margin:
-                    EdgeInsets.only(right: 4),
+                    margin: EdgeInsets.only(right: 4),
                     color: Colors.red,
                     width: 15,
                     height: 15,
                   ),
-                  Text("Infected    ",style: TextStyle(fontSize: 17),),
+                  Text(
+                    "Infected    ",
+                    style: TextStyle(fontSize: 17),
+                  ),
                 ],
               ),
-
-
               Row(
-                mainAxisAlignment:
-                MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    margin:
-                    EdgeInsets.only(right: 4),
+                    margin: EdgeInsets.only(right: 4),
                     color: Colors.green,
                     width: 15,
                     height: 15,
                   ),
-                  Text("Recovered",style: TextStyle(fontSize: 17),),
+                  Text(
+                    "Recovered",
+                    style: TextStyle(fontSize: 17),
+                  ),
                 ],
               ),
             ],
@@ -249,26 +250,26 @@ class _GraphsLineState extends State<GraphsLine> {
           Expanded(
               child: segmentedControlGroupValue == 0
                   ? (greenspots == null
-                  ? Center(child: CircularProgressIndicator())
-                  : Padding(
-                padding:
-                const EdgeInsets.only(right: 16.0, left: 6.0),
-                child: LineChart(
-                  sampleData1(),
-                  // swapAnimationDuration: const Duration(milliseconds: 250),
-                ),
-              ))
+                      ? Center(child: CircularProgressIndicator())
+                      : Padding(
+                          padding:
+                              const EdgeInsets.only(right: 16.0, left: 6.0),
+                          child: LineChart(
+                            sampleData1(),
+                            // swapAnimationDuration: const Duration(milliseconds: 250),
+                          ),
+                        ))
                   : (greenspotsformonth == null
-                  ? Center(child: CircularProgressIndicator())
-                  : Padding(
-                padding:
-                const EdgeInsets.only(right: 16.0, left: 6.0),
-                child: LineChart(
-                  sampleData2(),
-                  // swapAnimationDuration:
-                  // const Duration(milliseconds: 250),
-                ),
-              ))),
+                      ? Center(child: CircularProgressIndicator())
+                      : Padding(
+                          padding:
+                              const EdgeInsets.only(right: 16.0, left: 6.0),
+                          child: LineChart(
+                            sampleData2(),
+                            // swapAnimationDuration:
+                            // const Duration(milliseconds: 250),
+                          ),
+                        ))),
           const SizedBox(
             height: 10,
           ),
@@ -356,14 +357,10 @@ class _GraphsLineState extends State<GraphsLine> {
     return LineChartData(
       // backgroundColor: Colors.black54,
       lineTouchData: LineTouchData(
-
         touchTooltipData: LineTouchTooltipData(
-
           tooltipBgColor: Colors.blueGrey.withOpacity(0.9),
         ),
-        touchCallback: (LineTouchResponse touchResponse) {
-
-        },
+        touchCallback: (LineTouchResponse touchResponse) {},
         handleBuiltInTouches: true,
       ),
       gridData: FlGridData(
@@ -424,7 +421,7 @@ class _GraphsLineState extends State<GraphsLine> {
                 return '2000k';
               case 3000000:
                 return '3000k';
-            // return '30k';
+              // return '30k';
               case 4000000:
                 return '4000k';
               case 5000000:
@@ -580,7 +577,7 @@ class _GraphsLineState extends State<GraphsLine> {
                 return '250k';
               case 350000:
                 return '350k';
-            // return '350k';
+              // return '350k';
               case 450000:
                 return '450k';
               case 550000:
