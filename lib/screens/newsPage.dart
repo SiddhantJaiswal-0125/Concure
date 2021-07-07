@@ -16,11 +16,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _MyAppState extends State<HomePage> {
+  bool check = true;
   @override
   void initState() {
     //TODO: implement initState
     super.initState();
     fetch();
+
+
   }
 
   List data;
@@ -34,6 +37,11 @@ class _MyAppState extends State<HomePage> {
       data = fetchdata["articles"];
     });
 
+
+    check = false;
+    setState(() {
+
+    });
     return "Success";
   }
 
@@ -44,10 +52,10 @@ class _MyAppState extends State<HomePage> {
         centerTitle: true,
         title: Text('Covid News'),
       ),
-      body: Swiper(
+      body: check ? Center(child: CircularProgressIndicator()) : Swiper(
         itemBuilder: (BuildContext context, int index) {
           return InkWell(
-            
+
             onTap: () {
               Navigator.push(
                   context,

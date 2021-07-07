@@ -434,6 +434,16 @@ class _GraphsLineState extends State<GraphsLine> {
                 return '8000k';
               case 9000000:
                 return '9000k';
+              case 10000000:
+                return '10000k';
+              case 11000000:
+                return '11000k';
+              case 12000000:
+                return '12000k';
+              case 13000000:
+                return '13000k';
+              case 14000000:
+                return '14000k';
             }
             return '';
           },
@@ -464,7 +474,7 @@ class _GraphsLineState extends State<GraphsLine> {
       ),
       minX: 0,
       maxX: 12,
-      maxY: 10000000,
+      maxY: 15000000,
       minY: 0,
       lineBarsData: linesBarData1(),
     );

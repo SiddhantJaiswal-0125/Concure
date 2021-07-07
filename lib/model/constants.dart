@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class constant {
   static Color confirmed = Colors.black;
   static Color downbar = Color(0xff202c3b);
-  static Color tapInfo = Colors.blue;
+  static Color tapInfo = Colors.green;
 
   static Color navbar = Colors.white;
 

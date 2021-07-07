@@ -108,6 +108,8 @@ class _SettingPage extends State<SettingPage> {
         child: Column(
 
           children: [
+
+            SizedBox(height: 10,),
             Card(
               elevation: 3,
               child: Row(
@@ -157,7 +159,7 @@ class _SettingPage extends State<SettingPage> {
               ),
             ),
             SizedBox(
-              height: 50,
+              height: 20,
             ),
             clickbutton(
               'Graphical Data',
