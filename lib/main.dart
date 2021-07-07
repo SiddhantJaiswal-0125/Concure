@@ -11,28 +11,12 @@ import "package:hive_flutter/hive_flutter.dart";
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:workmanager/workmanager.dart';
 
-void callbackDispatcher() {
-  Workmanager.executeTask((taskName, inputData) async {
-    Networking n = new Networking();
-    // NotificationService nr= new NotificationService();
-    n.get_notified();
-    checkAvailability2();
-    return Future.value(true);
-  });
-}
 
 void main() async {
   await Hive.initFlutter();
   await GetStorage.init();
   box = await Hive.openBox('easyTheme');
-  WidgetsFlutterBinding.ensureInitialized();
-  await Workmanager.initialize(callbackDispatcher);
-  await Workmanager.registerPeriodicTask("vaccine_notify", "vaccine_notify",
-      inputData: {"data1": "value1", "data2": "value2"},
-      frequency: Duration(minutes: 15),
-      initialDelay: Duration(minutes: 1));
   runApp(MyApp());
 }
 
@@ -76,8 +60,9 @@ class _MyApp extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+
     currentTheme.addListener(() {
-      print("Changed");
+      // print("Changed");
       setState(() {});
     });
   }
@@ -88,7 +73,7 @@ class _MyApp extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Concure',
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+        primarySwatch: Colors.indigo,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       darkTheme: ThemeData(

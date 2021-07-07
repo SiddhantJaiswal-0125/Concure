@@ -17,6 +17,22 @@ import 'package:covid19_tracker/services/networking.dart';
 import 'dashboard.dart';
 import 'graphsline.dart';
 import 'newsPage.dart';
+import 'package:covid19_tracker/model/config.dart';
+import 'package:covid19_tracker/model/constants.dart';
+import 'package:covid19_tracker/model/covid19_dashboard.dart';
+import 'package:covid19_tracker/screens/Countries.dart';
+import 'package:covid19_tracker/screens/Indian.dart';
+import 'package:covid19_tracker/screens/SettingPage.dart';
+import 'package:covid19_tracker/screens/graphsline.dart';
+import 'package:covid19_tracker/services/networking.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
+import 'package:fl_chart/fl_chart.dart';
+import 'package:intl/intl.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'slot.dart';
 
 class SettingPage extends StatefulWidget {
   _SettingPage createState() => _SettingPage();
@@ -57,11 +73,31 @@ class _SettingPage extends State<SettingPage> {
     });
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     IconData blub2 = Icons.lightbulb;
     IconData blub = Icons.highlight;
 
+    if(currentTheme.currentTheme().toString() == "ThemeMode.dark"  )
+    {
+      constant.navbar = Color(0xff202c3b);
+      constant.downbar = Colors.cyan;
+
+      constant.confirmed = Colors.white;
+    }
+    else
+    {
+
+      constant.navbar = Colors.white;
+      constant.downbar = Color(0xff202c3b);
+      constant.confirmed = Colors.black;
+
+    }
+    setState(() {
+
+    });
     return Scaffold(
       appBar: AppBar(
         title: Text('Concure'),

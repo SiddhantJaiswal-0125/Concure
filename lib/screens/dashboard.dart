@@ -1,23 +1,19 @@
+import 'package:covid19_tracker/model/config.dart';
 import 'package:covid19_tracker/model/constants.dart';
 import 'package:covid19_tracker/model/covid19_dashboard.dart';
 import 'package:covid19_tracker/screens/Countries.dart';
 import 'package:covid19_tracker/screens/Indian.dart';
 import 'package:covid19_tracker/screens/SettingPage.dart';
 
-import 'package:covid19_tracker/screens/graphsline.dart';
-
 import 'package:covid19_tracker/services/networking.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:intl/intl.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-import 'slot.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -45,7 +41,6 @@ class _DashboardScreenState extends State<DashboardScreen>
   @override
   void initState() {
     super.initState();
-
     _controller = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: 500),
@@ -77,15 +72,6 @@ class _DashboardScreenState extends State<DashboardScreen>
     day5 = (dataList[4]['date']).toString();
     day6 = (dataList[5]['date']).toString();
     day7 = (dataList[6]['date']).toString();
-
-    // print('d1 '+d1.toString());
-    // print('d2 '+d2.toString());
-    // print('d3 '+d3.toString());
-    // print('d4 '+d4.toString());
-    // print('d5 '+d5.toString());
-    // print('d6 '+d6.toString());
-    // print('d7 '+d7.toString());
-    // print(dataList);
     setState(() {
       data = result;
       if (data != null) {
@@ -97,6 +83,26 @@ class _DashboardScreenState extends State<DashboardScreen>
 
   @override
   Widget build(BuildContext context) {
+    if(currentTheme.currentTheme().toString() == "ThemeMode.dark"  )
+      {
+        constant.navbar = Color(0xff202c3b);
+        constant.downbar = Colors.cyan;
+
+        constant.confirmed = Colors.white;
+      }
+    else
+      {
+
+        constant.navbar = Colors.white;
+        constant.downbar = Color(0xff202c3b);
+        constant.confirmed = Colors.black;
+
+      }
+    setState(() {
+
+    });
+
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Concure'),
@@ -109,6 +115,18 @@ class _DashboardScreenState extends State<DashboardScreen>
               onRefresh: getData,
               child: CustomScrollView(
                 slivers: <Widget>[
+                  SliverList(
+                    delegate: SliverChildListDelegate(
+                      [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          // child: Center(
+                          //   // child: Text('Result date: ${data.date}'),
+                          // ),
+                        )
+                      ],
+                    ),
+                  ),
                   SliverGrid(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
@@ -117,7 +135,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                     delegate: SliverChildListDelegate([
                       buildSummerCard(
                           text: 'Confirmed',
-                          color: constant.downbar,
+                          color: constant.confirmed,
                           count: data.confirmed),
                       buildSummerCard(
                           text: 'Active',
@@ -160,7 +178,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                                   padding: const EdgeInsets.all(16),
                                   child: Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.stretch,
+                                    CrossAxisAlignment.stretch,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     mainAxisSize: MainAxisSize.max,
                                     children: <Widget>[
@@ -209,7 +227,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                   ),
                 ],
               ),
-            ),
+      ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           color: constant.navbar,
@@ -324,13 +342,13 @@ class _DashboardScreenState extends State<DashboardScreen>
   final formatter = NumberFormat.decimalPattern('en-US');
 
   BarChartGroupData makeGroupData(
-    int x,
-    double y, {
-    bool isTouched = false,
-    Color barColor = Colors.white,
-    double width = 22,
-    List<int> showTooltips = const [],
-  }) {
+      int x,
+      double y, {
+        bool isTouched = false,
+        Color barColor = Colors.white,
+        double width = 12,
+        List<int> showTooltips = const [],
+      }) {
     return BarChartGroupData(
       x: x,
       barRods: [
@@ -350,32 +368,32 @@ class _DashboardScreenState extends State<DashboardScreen>
   }
 
   List<BarChartGroupData> showingGroups() => List.generate(7, (i) {
-        switch (i) {
-          case 0:
-            return makeGroupData(0, d1.toDouble(),
-                isTouched: i == touchedIndex);
-          case 1:
-            return makeGroupData(1, d2.toDouble(),
-                isTouched: i == touchedIndex);
-          case 2:
-            return makeGroupData(2, d3.toDouble(),
-                isTouched: i == touchedIndex);
-          case 3:
-            return makeGroupData(3, d4.toDouble(),
-                isTouched: i == touchedIndex);
-          case 4:
-            return makeGroupData(4, d5.toDouble(),
-                isTouched: i == touchedIndex);
-          case 5:
-            return makeGroupData(5, d6.toDouble(),
-                isTouched: i == touchedIndex);
-          case 6:
-            return makeGroupData(6, d7.toDouble(),
-                isTouched: i == touchedIndex);
-          default:
-            return throw Error();
-        }
-      });
+    switch (i) {
+      case 0:
+        return makeGroupData(0, d1.toDouble(),
+            isTouched: i == touchedIndex);
+      case 1:
+        return makeGroupData(1, d2.toDouble(),
+            isTouched: i == touchedIndex);
+      case 2:
+        return makeGroupData(2, d3.toDouble(),
+            isTouched: i == touchedIndex);
+      case 3:
+        return makeGroupData(3, d4.toDouble(),
+            isTouched: i == touchedIndex);
+      case 4:
+        return makeGroupData(4, d5.toDouble(),
+            isTouched: i == touchedIndex);
+      case 5:
+        return makeGroupData(5, d6.toDouble(),
+            isTouched: i == touchedIndex);
+      case 6:
+        return makeGroupData(6, d7.toDouble(),
+            isTouched: i == touchedIndex);
+      default:
+        return throw Error();
+    }
+  });
 
   BarChartData mainBarData() {
     return BarChartData(

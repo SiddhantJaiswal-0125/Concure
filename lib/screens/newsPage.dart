@@ -47,6 +47,7 @@ class _MyAppState extends State<HomePage> {
       body: Swiper(
         itemBuilder: (BuildContext context, int index) {
           return InkWell(
+            
             onTap: () {
               Navigator.push(
                   context,
@@ -105,12 +106,14 @@ class _MyAppState extends State<HomePage> {
                                 color: constant.tapInfo,
                                 fontSize: 20,
                                 fontWeight: FontWeight.w300),
-                          )
+                          ),
+                          SizedBox(height: 20,),
                         ],
                       ),
                     ),
                   ),
                 ),
+                // SizedBox(height: 400,),
               ],
             ),
           );
@@ -120,6 +123,7 @@ class _MyAppState extends State<HomePage> {
         scale: 0.9,
       ),
       bottomNavigationBar: Container(
+        // padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: constant.navbar,
           boxShadow: [
