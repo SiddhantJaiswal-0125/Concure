@@ -32,7 +32,7 @@ This app is made with a porpose to aware you, not to scare you/ So, take precaut
 
 ## Screenshots
 
-![alt text]Splash Screen(https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/Splash.png)
+![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/Splash.png)
 
 ## Source
 The data used in app has been taken from multiple sources official as well as unofficial. 
