@@ -35,6 +35,12 @@ This app is made with a porpose to aware you, not to scare you/ So, take precaut
 
 ![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/splash.jpg)
 
+* DashBoard
+
+![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/dashboard1.png)
+
+
+
 * Countries List (Light / Dark)
 
 ![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/countriesList.jpg)
@@ -45,14 +51,17 @@ This app is made with a porpose to aware you, not to scare you/ So, take precaut
 ![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/CountriesCollage.jpg)
 
 
-* Splash Screen || Settings Page (Light/Dark)
+* Graphs
 
-![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/splash.jpg)
+![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/graph.png)
 
+* News
 
-* Splash Screen || Settings Page (Light/Dark)
+![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/news.png)
 
-![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/splash.jpg)
+* Vaccinator
+
+![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/vaccinator.png)
 
 
 
