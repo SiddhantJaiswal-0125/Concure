@@ -32,6 +32,7 @@ This app is made with a porpose to aware you, not to scare you/ So, take precaut
 
 ## Screenshots
 * Splash Screen
+
 ![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/Splash.png)
 
 
