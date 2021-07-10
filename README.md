@@ -31,9 +31,9 @@ This app is made with a porpose to aware you, not to scare you/ So, take precaut
 
 
 ## Screenshots
-* Splash Screen
+* Splash Screen || Settings Page (Light/Dark)
 
-![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/Splash.png)
+![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/splash.png)
 
 
 * Vaccine Slots Booking  
