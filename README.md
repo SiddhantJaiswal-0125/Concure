@@ -35,7 +35,28 @@ This app is made with a porpose to aware you, not to scare you/ So, take precaut
 
 ![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/splash.jpg)
 
+* Countries List (Light / Dark)
 
-* Vaccine Slots Booking  
+![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/countriesList.jpg)
+
+
+* Country Wise Graphical Data (Light / Dark)
+
+![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/CountriesCollage.jpg)
+
+
+* Splash Screen || Settings Page (Light/Dark)
+
+![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/splash.jpg)
+
+
+* Splash Screen || Settings Page (Light/Dark)
+
+![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/splash.jpg)
+
+
+
+
+ 
 ## Source
 The data used in app has been taken from multiple sources official as well as unofficial. 
