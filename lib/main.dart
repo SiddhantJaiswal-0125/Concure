@@ -5,11 +5,11 @@ import 'package:covid19_tracker/model/config.dart';
 import 'package:covid19_tracker/screens/dashboard.dart';
 import 'package:covid19_tracker/screens/slot_booking.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+// import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:hive/hive.dart';
 import "package:hive_flutter/hive_flutter.dart";
 import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 import 'package:get_storage/get_storage.dart';
 
 
@@ -43,7 +43,8 @@ Future<bool> checkAvailability2() async {
       bool av = false;
       // NotificationService nr= new NotificationService();
       for (int i = 0; i < s.length; ++i) {
-        print("vinayak");
+        // print("vin
+        // ayak");
         ct = s[i].sessions;
         for (int j = 0; j < ct.length; ++j) {
           print("${ct[j].minAgeLimit}");
