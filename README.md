@@ -31,8 +31,10 @@ This app is made with a porpose to aware you, not to scare you/ So, take precaut
 
 
 ## Screenshots
-
+* Splash Screen
 ![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/Splash.png)
 
+
+* Vaccine Slots Booking  
 ## Source
 The data used in app has been taken from multiple sources official as well as unofficial. 
