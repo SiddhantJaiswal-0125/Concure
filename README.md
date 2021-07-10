@@ -5,7 +5,7 @@
 
 ![](https://img.shields.io/badge/Language-Dart-blue)   
 ![](https://img.shields.io/badge/SDK-Flutter-yellow)   
-![](https://zipjob.com/blog/job-search-cold-email/Download-Concure-orange)    
+![](https://zipjob.com/blog/job-search-cold-email/badge/Download-Concure-orange)    
 
 <!-- ![](https://img.shields.io/badge/Download-Concure--19-orange)   -->
 * Head towards releases to get latest version of the app
