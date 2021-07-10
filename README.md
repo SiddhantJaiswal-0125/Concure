@@ -1,4 +1,4 @@
-# Concure# NCOV-19
+# Concure
 ![alt text](https://github.com/KejariwalAyush/NCOV-19/blob/master/assets/icon.png)
 
 ### An app which keeps track record of CORONA VIRUS infected people,deaths & cured patients in INDIA 
