@@ -1,7 +1,7 @@
 # Concure
 ![alt text](https://github.com/KejariwalAyush/NCOV-19/blob/master/assets/icon.png)
 
-### An app which keeps track record of CORONA VIRUS infected people,deaths & cured patients in INDIA 
+### An app which keeps track record of CORONA VIRUS infected people,deaths & cured patients in INDIA and around the world.
 
 ![](https://img.shields.io/badge/Language-Dart-blue)   
 ![](https://img.shields.io/badge/SDK-Flutter-yellow)   
