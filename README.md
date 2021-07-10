@@ -5,7 +5,8 @@
 
 ![](https://img.shields.io/badge/Language-Dart-blue)   
 ![](https://img.shields.io/badge/SDK-Flutter-yellow)   
-![](https://img.shields.io/badge/Download-Concure-orange)  (https://github.com/KejariwalAyush/ITER-AIO/releases)
+![](https://img.shields.io/badge/Download-Concure-orange)
+Download it(https://github.com/KejariwalAyush/ITER-AIO/releases)
 * Head towards releases to get latest version of the app
 
 ![alt text](http://icons.iconarchive.com/icons/paomedia/small-n-flat/64/star-alt-icon.png) 
