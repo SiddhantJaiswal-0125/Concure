@@ -34,17 +34,19 @@ This app is made with a porpose to aware you, not to scare you. So, take precaut
 ## Screenshots
 
 <img src="assets/splash.jpg" width="100"><img src="assets/dashboard1.png" width="100"><img src="assets/countriesList.jpg" width="100"><img src="assets/CountriesCollage.jpg" width="100"><img 
-src="assets/graph.png" width="100">
-
+src="assets/graph.png" width="100"><img 
+src="assets/news.png" width="100"><img 
+src="assets/vaccinator.png" width="100">
+<!-- 
 * Splash Screen || Settings Page (Light/Dark)
 
 ![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/splash.jpg)
 
 * DashBoard
 
-![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/dashboard1.png)
+![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/dashboard1.png) -->
 
-
+<!-- 
 
 * Countries List (Light / Dark)
 
@@ -56,9 +58,9 @@ src="assets/graph.png" width="100">
 ![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/CountriesCollage.jpg)
 
 
-* Graphs
+* Graphs -->
 
-![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/graph.png)
+<!-- ![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/graph.png)
 
 * News
 
@@ -69,7 +71,7 @@ src="assets/graph.png" width="100">
 ![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/vaccinator.png)
 
 
-
+ -->
 
  
 ## Source
