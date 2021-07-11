@@ -33,7 +33,7 @@ This app is made with a porpose to aware you, not to scare you. So, take precaut
 
 ## Screenshots 
 
-<img src="assets/splash.jpg" width="400" height= "500">     <img src="assets/dashboard1.png" width="250" height= "500">     <img src="assets/countriesList.jpg"  width="400" height= "500">     <img src="assets/CountriesCollage.jpg"  width="400" height= "500">       <img src="assets/graph.png" width="250" height= "500">             <img src="assets/news.png"  width="250" height= "500">          <img src="assets/vaccinator.png"  width="250" height= "500">
+<img src="assets/splash.jpg" width="400" height= "500">     <img src="assets/dashboard1.png" width="250" height= "500">     <img src="assets/countriesList.jpg"  width="400" height= "500">     <img src="assets/CountriesCollage.jpg"  width="400" height= "500">   <img src="assets/calender.jpg"  width="400" height= "500">     <img src="assets/graph.png" width="250" height= "500">             <img src="assets/news.png"  width="250" height= "500">          <img src="assets/vaccinator.png"  width="250" height= "500">
 <!-- 
 * Splash Screen || Settings Page (Light/Dark)
 
