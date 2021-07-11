@@ -21,7 +21,7 @@ You can see what are the symptoms of this virus & what precautions you should ta
 This app is made with a porpose to aware you, not to scare you. So, take precautions and be safe #StayHome
 
 ## Features
-* Vaccine Slots Booking  
+* Vaccine Slots Booking as per Pincode and Date
 * Latest World Stats
 * Countries Stats
 * States Stats
@@ -31,7 +31,7 @@ This app is made with a porpose to aware you, not to scare you. So, take precaut
 * Dual Theme (Dark and Light)
 
 
-## Screenshots
+## Screenshots 
 
 <img src="assets/splash.jpg" width="400" height= "500">     <img src="assets/dashboard1.png" width="250" height= "500">     <img src="assets/countriesList.jpg"  width="400" height= "500">     <img src="assets/CountriesCollage.jpg"  width="400" height= "500">       <img src="assets/graph.png" width="250" height= "500">             <img src="assets/news.png"  width="250" height= "500">          <img src="assets/vaccinator.png"  width="250" height= "500">
 <!-- 
