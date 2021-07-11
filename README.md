@@ -32,6 +32,10 @@ This app is made with a porpose to aware you, not to scare you. So, take precaut
 
 
 ## Screenshots
+
+<img src="assets/splash.jpg" width="100"><img src="assets/dashboard1.png" width="100"><img src="assets/countriesList.jpg" width="100"><img src="assets/CountriesCollage.jpg" width="100"><img 
+src="assets/graph.png" width="100">
+
 * Splash Screen || Settings Page (Light/Dark)
 
 ![alt text](https://github.com/SiddhantJaiswal-0125/Concure/blob/main/assets/splash.jpg)
