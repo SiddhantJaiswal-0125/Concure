@@ -33,7 +33,7 @@ This app is made with a porpose to aware you, not to scare you. So, take precaut
 
 ## Screenshots
 
-<img src="assets/splash.jpg" width="100"><img src="assets/dashboard1.png" width="100"><img src="assets/countriesList.jpg" width="100"><img src="assets/CountriesCollage.jpg" width="100"><img 
+<img src="assets/splash.jpg" width="100" height= "100"><img src="assets/dashboard1.png" width="100"><img src="assets/countriesList.jpg" width="100"><img src="assets/CountriesCollage.jpg" width="100"><img 
 src="assets/graph.png" width="100"><img 
 src="assets/news.png" width="100"><img 
 src="assets/vaccinator.png" width="100">
