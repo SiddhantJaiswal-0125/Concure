@@ -17,8 +17,6 @@ It helps you to be aware of the CORONA virus's latest news and its stats like th
 
 This app is made with a purpose to aware you, not to scare you. So, take precautions and be safe #StayHome
 
-This app is made with a porpose to aware you, not to scare you. So, take precautions and be safe #StayHome
-
 ## Features
 * Vaccine Slots Booking as per Pincode and Date
 * Latest World Stats
