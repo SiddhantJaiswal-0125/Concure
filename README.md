@@ -13,9 +13,13 @@
 * Star this Repo. if you like the app & support me, this keeps me motivated and keep going for further development
 
 ## Description 
-It helps you to be aware of the CORONA virus's latest news and its stats like the number of positive cases found, how many of them recovered, and how many of them are dead both around the world and in INDIA. It helps to give you proper details of vaccines and helps to book your slots. It also shows you the Helpline nos. of different state and whole India You can see what are the symptoms of this virus & what precautions you should take to avoid these to enter your body.
-
-This app is made with a purpose to aware you, not to scare you. So, take precautions and be safe #StayHome
+It helps you to be aware of the CORONA virus's latest news and its stats like the number of 
+positive cases found, how many of them recovered, and how many of them are dead both around the world 
+and in INDIA. It helps to give you proper details of vaccines and helps to book your slots. 
+It also shows you the Helpline nos. of different state and whole India You can see what are the symptoms 
+of this virus & what precautions you should take to avoid these entering your body.
+This app is made with a purpose to aware you, not to scare you. So, take precautions and 
+be safe to stay home.
 
 ## Features
 * Vaccine Slots Booking as per Pincode and Date
